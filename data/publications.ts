@@ -2,12 +2,39 @@ export const publications = {
   articles: [
     {
       title:
+        "α-Position Tricyano Engineering in Anthracene and Pyrene Push–Pull Chromophores for Tunable Electronic Materials",
+      authors:
+        "S Manna, R Kaliyaperumal, S Govindarajan, K Das, S Halder, S Mukhopadhyay",
+      journal: "The Journal of Physical Chemistry C",
+      year: 2026,
+      citations: null,
+    },
+    {
+       title:
+        "Synergizing two-dimensional materials and organic semiconductors: a new frontier in optoelectronic innovation",
+      authors:
+        "IA Akintayo, S Mukhopadhyay",
+      journal: "Physica Scripta",
+      year: 2026,
+      citations: null,
+    },
+    {
+      title:
+        "Electronic transport in radial π-conjugated macrocyclic molecules: a density functional theory study",
+      authors:
+        "S Govindarajan, K Ramya, MK Ravva, S Mukhopadhyay",
+      journal: "RSC advances",
+      year: 2026,
+      citations: null,
+    },
+    {
+      title:
         "Tailoring Lithium-Ion Storage in Li4WO5 through Molybdenum Substitution at Tungsten Sites",
       authors:
         "M Sarathbavan, C Kathiresan, L Ravi, KK Bharathi, S Mukhopadhyay",
       journal: "The Journal of Physical Chemistry C",
       year: 2026,
-      citations: null,
+      citations: 1,
     },
     {
       title:
@@ -25,7 +52,7 @@ export const publications = {
         "A Nawade, KB Busi, K Ramya, S Chakrabortty, S Mukhopadhyay",
       journal: "ChemNanoMat",
       year: 2025,
-      citations: 1,
+      citations: 3,
     },
     {
       title:
@@ -43,7 +70,7 @@ export const publications = {
         "K Prakash, NJ Valeti, P Jain, CS Pathak, MK Singha",
       journal: "Energy Technology",
       year: 2025,
-      citations: 15,
+      citations: 18,
     },
     {
       title:
@@ -78,17 +105,24 @@ export const publications = {
       year: 2024,
       citations: 3,
     },
-    {
-      title:
-        "Polarity-Induced Morphological Transformation of Terpyridine-Based Ligand",
-      authors: "P Rana et al.",
-      journal: "ACS Omega",
-      year: 2023,
-      citations: 6,
-    },
   ],
 
  patents: [
+  {
+    title: "Non-Destructive Probe System for Electrical Characterization",
+    details: "IN202641050285 A1",
+    year: 2026,
+  },
+  {
+    title: "Coaxial Solvent-Vapor Shroud for Meniscus-Guided Deposition",
+    details: "IN202641039774 A1",
+    year: 2026,
+  },
+  {
+    title: "Stainless-Steel Electrode Mask for Semiconductor Film Measurements",
+    details: "IN202648718600 A1",
+    year: 2026,
+  },
   {
     title: "Handheld Ligand-Based Electrochemical Sensor",
     details: "IN202641008527 A1",

@@ -83,7 +83,7 @@ export default function Home() {
                 <p className="text-[#8fa8c8]">CRG (ANRF): Organic Logic in Memory</p>
 
                 <p className="text-[#c9a84c] mt-3">Open Positions</p>
-                <p className="text-[#8fa8c8]">2 Ph.D. fellowships + Internship opportunities</p>
+                <p className="text-[#8fa8c8]">Ph.D. fellowships + Internship opportunities</p>
               </div>
             </div>
           </div>
@@ -300,7 +300,9 @@ export default function Home() {
         {name:"Akintayo A. Ismail", role:"Research Scholar", email:"ismailadegbola_a@srmap.edu.in", img:"/team/akintayo.jpg"},
         {name:"Mukesh Iyyamperumal", role:"Research Scholar", email:"mukesh_i@srmap.edu.in", img:"/team/mukesh.jpg", pos:"object-[center_20%]"},
         {name:"Raashi D", role:"Research Scholar", email:"raashi_d@srmap.edu.in", img:"/team/raashi.jpg", pos:"object-[center_top]"},
-        {name:"Suryakanta Sahoo", role:"JRF", email:"suryakanta.s@srmap.edu.in", img:"/team/suryakanta.jpg", pos:"object-[center_15%]"}
+        {name:"Suryakanta Sahoo", role:"JRF", email:"suryakanta.s@srmap.edu.in", img:"/team/suryakanta.jpg", pos:"object-[center_15%]"},
+        {name:"Mohd Ayan Anwar", role:"Research Scholar", email:"mohdayan_anwar@srmap.edu.in", img:"/team/ayan.jpg"},
+        {name:"Priyanka Khachariya", role:"Research Scholar", email:"priyanka_khachariya@srmap.edu.in"}
       ].map(member => (
         <div key={member.name} className="relative group bg-[#111f3d] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
 
@@ -425,7 +427,7 @@ export default function Home() {
               {name:"Probe Station", img:"/facilities/probe.jpg"},
               {name:"Source Measure Unit (SMU)", img:"/facilities/smu.jpg"},
               {name:"Spin Coater", img:"/facilities/spin.jpg", pos:"object-[center_30%]"},
-              {name:"Electrochemical Workstation", img:"/facilities/electrochem.jpg"},
+              {name:"PVD System (Thermal & Sputtering)", img:"/facilities/pvd.jpg", pos:"object-cover object-[center_20%]"},
               {name:"Photodetector Setup", img:"/facilities/photo.jpg"},
               {name:"Ellipsometry", img:"/facilities/ellipsometry.jpg"}
             ].map(f => (
@@ -449,10 +451,10 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {name:"Prof. Mordechai Sheves", inst:"Weizmann Institute", img:"/collaborators/sheves.jpg", link:"https://www.weizmann.ac.il/Organic_Chemistry/Sheves/home"},
-              {name:"Prof. David Cahen", inst:"Weizmann Institute", img:"/collaborators/cahen.jpg", link:"https://www.weizmann.ac.il/MCMS/Cahen/home"},
+              {name:"Prof. David Cahen", inst:"Weizmann Institute", img:"/collaborators/cahen.jpg", link:"https://www.weizmann.ac.il/MCMS/Cahen/home", pos:"object-cover object-[center_20%]"},
               {name:"Prof. Raj Kumar Roy", inst:"IISER Mohali", img:"/collaborators/roy.jpg", link:"https://www.iisermohali.ac.in/faculty/dcs/raj", pos:"object-[center_top]"},
               {name:"Dr. Sandipan Halder", inst:"VNIT Nagpur", img:"/collaborators/halder.jpg", link:"https://vnit.ac.in/basic_science/chemistry/dr-sandipan-halder/", pos:"object-[center_top]"},
-              {name:"Dr. Priyadip Das", inst:"SRMIST", img:"/collaborators/das.jpg", link:"https://www.srmist.edu.in/faculty/dr-priyadip-das/"},
+              {name:"Dr. Priyadip Das", inst:"SRMIST", img:"/collaborators/das.jpg", link:"https://www.srmist.edu.in/faculty/dr-priyadip-das/", pos:"object-cover object-[center_20%]"},
               {name:"Dr. Sabyasachi Chakrabortty", inst:"SRM AP", img:"/collaborators/chakrabortty.jpg", link:"https://www.srmap.edu.in/faculty/dr-sabyasachi-chakrabortty/"},
               {name:"Dr. Mahesh Ravva", inst:"SRM AP", img:"/collaborators/ravva.jpg", link:"https://www.srmap.edu.in/faculty/dr-mahesh-kumar-ravva/", pos:"object-[center_25%]"},
               {name:"Dr. Kammatham Narayanaswamy", inst:"SRM AP", img:"/collaborators/samy.jpg", link:"https://www.srmap.edu.in/faculty/dr-kamatham-narayanaswamy/", pos:"object-[center_30%]"}
@@ -547,7 +549,7 @@ export default function Home() {
 
             {/* PhD */}
             <div className="bg-white border border-[#c9a84c] rounded-lg p-6 shadow-sm">
-              <h4 className="font-semibold mb-2">PhD Positions (2 openings)</h4>
+              <h4 className="font-semibold mb-2">PhD Positions</h4>
 
               <p className="text-sm text-[#555] mb-4">
                 University-funded fellowships are available for motivated candidates interested in organic electronics 

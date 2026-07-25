@@ -1,10 +1,42 @@
 import { NextResponse } from "next/server";
 
+type OrcidWorkSummary = {
+  title?: {
+    title?: {
+      value?: string;
+    };
+  };
+  "journal-title"?: {
+    value?: string;
+  };
+  "publication-date"?: {
+    year?: {
+      value?: string;
+    };
+  };
+  type?: string;
+};
+
+type OrcidGroup = {
+  "work-summary": OrcidWorkSummary[];
+};
+
+type OrcidResponse = {
+  group?: OrcidGroup[];
+};
+
+type Publication = {
+  title: string;
+  journal: string;
+  year: number;
+  type: string;
+};
+
 export async function GET() {
   const ORCID_ID = "0000-0002-6290-6380";
 
   try {
-    const res = await fetch(
+    const response = await fetch(
       `https://pub.orcid.org/v3.0/${ORCID_ID}/works`,
       {
         headers: {
@@ -13,49 +45,61 @@ export async function GET() {
       }
     );
 
-    if (!res.ok) {
-      throw new Error("ORCID fetch failed");
+    if (!response.ok) {
+      throw new Error("Failed to fetch ORCID data.");
     }
 
-    const data = await res.json();
-    const works = data.group || [];
+    const data = (await response.json()) as OrcidResponse;
 
-    const publications = works
-      .map((item: any) => {
-        const summaries = item["work-summary"];
+    const publications: Publication[] = (data.group ?? [])
+      .map((group: OrcidGroup) => {
+        const summaries = group["work-summary"];
 
-        // Pick the most recent version (better than [0])
-        const work = summaries.reduce((latest: any, current: any) => {
-          const yearA = Number(
-            latest["publication-date"]?.year?.value || 0
-          );
-          const yearB = Number(
-            current["publication-date"]?.year?.value || 0
-          );
-          return yearB > yearA ? current : latest;
-        });
+        const latestWork = summaries.reduce(
+          (
+            latest: OrcidWorkSummary,
+            current: OrcidWorkSummary
+          ): OrcidWorkSummary => {
+            const latestYear = Number(
+              latest["publication-date"]?.year?.value ?? 0
+            );
+
+            const currentYear = Number(
+              current["publication-date"]?.year?.value ?? 0
+            );
+
+            return currentYear > latestYear ? current : latest;
+          }
+        );
 
         return {
-          title: work.title?.title?.value || "No title",
-          journal: work["journal-title"]?.value || "",
-          year: Number(work["publication-date"]?.year?.value) || 0,
-          type: work.type,
+          title: latestWork.title?.title?.value ?? "No title",
+          journal: latestWork["journal-title"]?.value ?? "",
+          year: Number(
+            latestWork["publication-date"]?.year?.value ?? 0
+          ),
+          type: latestWork.type ?? "",
         };
       })
-      // Filter only journal articles
-      .filter((pub: any) => pub.type === "journal-article")
-      // Remove invalid years
-      .filter((pub: any) => pub.year > 0)
-      // Sort latest first
-      .sort((a: any, b: any) => b.year - a.year)
-      // Limit to 10
+      .filter(
+        (publication: Publication) =>
+          publication.type === "journal-article"
+      )
+      .filter((publication: Publication) => publication.year > 0)
+      .sort(
+        (a: Publication, b: Publication) => b.year - a.year
+      )
       .slice(0, 10);
 
     return NextResponse.json(publications);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
-      { error: "Failed to fetch ORCID data" },
-      { status: 500 }
+      {
+        error: "Failed to fetch ORCID data.",
+      },
+      {
+        status: 500,
+      }
     );
   }
 }
