@@ -24,7 +24,10 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section id="home" className="min-h-screen flex items-center px-8 pt-24">
+      <section
+          id="home"
+          className="min-h-screen flex items-center px-5 md:px-8 pt-24"
+      >
         <div className="grid md:grid-cols-[1fr_1.2fr_1fr] gap-8 max-w-7xl mx-auto items-center">
 
           {/* LEFT: LARGE ANIMATED LAB LOGO */}
@@ -44,7 +47,7 @@ export default function Home() {
               </div>
             </div>
 
-            <h1 className="text-7xl md:text-8xl font-serif leading-tight mb-6">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-serif leading-tight mb-6">
               Device <br/>
               <span className="text-[#c9a84c] italic">Physics</span><br/>
               Laboratory
@@ -55,7 +58,7 @@ export default function Home() {
               Associate Professor · Department of Physics
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href="#research" className="bg-[#c9a84c] text-[#0d1f3c] px-8 py-3 text-sm rounded">
                 OUR RESEARCH
               </a>
@@ -66,7 +69,7 @@ export default function Home() {
           </div>
 
           {/* RIGHT: RESEARCH BOX */}
-          <div className="flex justify-end">
+          <div className="flex justify-center md:justify-end">
             <div className="border border-[#c9a84c]/30 p-8 rounded-lg w-full max-w-md">
               <h3 className="text-[#c9a84c] mb-4 font-serif text-lg">Research Interests</h3>
               <ul className="text-base space-y-2 text-[#8fa8c8]">
@@ -92,7 +95,10 @@ export default function Home() {
       </section>
 
       {/* ABOUT PI */}
-<section id="about" className="bg-[#f8f5ef] text-black px-8 py-20">
+<section
+  id="about"
+  className="bg-[#f8f5ef] text-black px-5 md:px-8 py-20"
+>
   <div className="max-w-7xl mx-auto grid md:grid-cols-[320px_1fr] gap-12">
 
     {/* LEFT: IMAGE + LINKS */}
@@ -190,11 +196,11 @@ export default function Home() {
             <tbody>
               <tr className="border-b">
                 <td className="px-4 py-3 font-medium">Citations</td>
-                <td className="px-4 py-3 text-right">3065</td>
+                <td className="px-4 py-3 text-right">3178</td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-3 font-medium">h-index</td>
-                <td className="px-4 py-3 text-right">14</td>
+                <td className="px-4 py-3 text-right">15</td>
               </tr>
               <tr>
                 <td className="px-4 py-3 font-medium">i10-index</td>
@@ -302,7 +308,7 @@ export default function Home() {
         {name:"Raashi D", role:"Research Scholar", email:"raashi_d@srmap.edu.in", img:"/team/raashi.jpg", pos:"object-[center_top]"},
         {name:"Suryakanta Sahoo", role:"JRF", email:"suryakanta.s@srmap.edu.in", img:"/team/suryakanta.jpg", pos:"object-[center_15%]"},
         {name:"Mohd Ayan Anwar", role:"Research Scholar", email:"mohdayan_anwar@srmap.edu.in", img:"/team/ayan.jpg"},
-        {name:"Priyanka Khachariya", role:"Research Scholar", email:"priyanka_khachariya@srmap.edu.in"}
+        {name:"Priyanka Khachariya", role:"Research Scholar", email:"priyanka_khachariya@srmap.edu.in", img:"/team/priyanka.jpg"}
       ].map(member => (
         <div key={member.name} className="relative group bg-[#111f3d] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
 
@@ -316,7 +322,7 @@ export default function Home() {
           {/* HOVER OVERLAY */}
           <div className="absolute inset-0 flex flex-col justify-end p-4 
             bg-gradient-to-t from-[#0d1f3c] via-[#0d1f3c]/90 to-transparent 
-            opacity-0 group-hover:opacity-100 transition duration-300">
+            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300">
 
             <h3 className="font-serif text-lg tracking-wide mb-1">
               {member.name}
@@ -379,7 +385,7 @@ export default function Home() {
         <div
           className="absolute inset-0 flex flex-col justify-end p-4 
           bg-gradient-to-t from-[#0d1f3c] via-[#0d1f3c]/90 to-transparent 
-          opacity-0 group-hover:opacity-100 transition duration-300"
+          opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300"
         >
           <h3 className="font-serif text-lg tracking-wide mb-1">
             {member.name}
@@ -463,7 +469,7 @@ export default function Home() {
                 <img src={c.img} className={`w-full h-52 object-cover ${c.pos || 'object-center'} group-hover:scale-105 transition duration-300`} onError={(e)=>{e.currentTarget.src='/collaborators/placeholder.jpg'}} />
 
                 {/* HOVER OVERLAY */}
-                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-center p-4 text-white">
+                <div className="absolute inset-0 bg-black/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition flex flex-col items-center justify-center text-center p-4 text-white">
                   <p className="text-sm text-[#c9a84c]">{c.inst}</p>
                   <h3 className="font-serif">{c.name}</h3>
                   <a href={c.link} target="_blank" className="mt-2 text-xs underline">View Profile</a>
