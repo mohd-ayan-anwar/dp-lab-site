@@ -1,6 +1,7 @@
 'use client'
 
 import PublicationsSection from "@/components/PublicationsSection";
+import ResearchMetrics from "@/components/ResearchMetrics";
 export default function Home() {
 
   return (
@@ -195,30 +196,7 @@ export default function Home() {
       </div>
 
       {/* METRICS */}
-      <div className="mt-6 md:mt-0">
-        <h3 className="font-serif text-xl text-[#0d1f3c] mb-4">
-          Research Metrics
-        </h3>
-
-        <div className="bg-white border border-[#c9a84c] rounded-lg shadow-md overflow-hidden">
-          <table className="text-sm w-full">
-            <tbody>
-              <tr className="border-b">
-                <td className="px-4 py-3 font-medium">Citations</td>
-                <td className="px-4 py-3 text-right">3178</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-3 font-medium">h-index</td>
-                <td className="px-4 py-3 text-right">15</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-medium">i10-index</td>
-                <td className="px-4 py-3 text-right">19</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+        <ResearchMetrics />
 
     </div>
   </div>
