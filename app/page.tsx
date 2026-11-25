@@ -111,6 +111,15 @@ export default function Home() {
 
       <div className="mt-4 flex flex-col gap-3 w-full">
         <a
+          href="https://www.srmap.edu.in/faculty/dr-sabyasachi-mukhopadhyay/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full text-center border border-[#c9a84c] text-[#0d1f3c] py-2 rounded hover:bg-[#c9a84c] hover:text-white transition"
+>
+          Faculty Profile
+        </a>
+
+        <a
           href="https://scholar.google.com/citations?user=GaleEZ8AAAAJ&hl=en"
           target="_blank"
           rel="noopener noreferrer"
