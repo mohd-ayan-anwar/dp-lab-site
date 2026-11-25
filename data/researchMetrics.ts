@@ -5,7 +5,7 @@ export const researchMetrics = {
   profileUrl:
     "https://scholar.google.com/citations?user=GaleEZ8AAAAJ&hl=en",
 
-  publications: 66,
+  publications: 48,
   citations: 3274,
   hIndex: 15,
   i10Index: 20,
